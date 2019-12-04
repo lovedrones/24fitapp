@@ -13,7 +13,10 @@ require('./config/database');
 require('./config/passport');
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/workouts');
+var loginRouter = require('./routes/login');
+var mealsRouter = require('./routes/meals');
+var workoutRouter = require('./routes/workouts');
+var apiRouter = require('./routes/api')
 
 var app = express();
 
@@ -28,7 +31,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(session({
-  secret: '24 Fit-Me',
+  secret: '24 Fit-Me', // this is not a good secret
   resave: false,
   saveUninitialized: true
 }));
@@ -36,8 +39,11 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
+// bring in your routes and it should work 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/24fitme', loginRouter); // i would get rid this
+app.use('24fitme/meals',  mealsRouter);
+app.use('24fitme/workouts', workoutRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

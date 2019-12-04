@@ -1,5 +1,6 @@
 var mongoose = require("mongoose");
 
+
 mongoose.connect(process.env.DATABASE_URL, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
@@ -7,9 +8,16 @@ mongoose.connect(process.env.DATABASE_URL, {
 });
 
 // database connection event
-mongoose.connection.on("connected", function(error, db) {
-    if(error) throw new Error(error)
-    console.log(`Mongoose connected to: ${process.env.DATABASE_URL}`);
+mongoose.connection.on("connected", function() {
+    console.log(`Mongoose connected to: MongoDB Cloud Atlas`);
 });
+
+mongoose.connection.on('disconnect', () => {
+  console.log('we have disconnected from mongo cloud atlas')
+})
+
+mongoose.connection.on("erorr", () => {
+  console.error(error)
+})
 
     module.exports = mongoose;

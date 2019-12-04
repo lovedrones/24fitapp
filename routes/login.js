@@ -3,8 +3,8 @@ var router = express.Router();
 var passport= require('passport');
 
 /* GET home page. */
-router.get('/', function(req, res, next) { 
-  res.render('index', { title: '24 FIT-me' });
+router.get('/', function(req, res, next) {
+  res.render('24fitme/index', { title: '24 FIT-me' });
 });
 
 router.get('/auth/google', passport.authenticate(
@@ -15,8 +15,8 @@ router.get('/auth/google', passport.authenticate(
 router.get('/oauth2callback',passport.authenticate(
   'google',
   { 
-    successRedirect: '/24fitme',
-    failureRedirect: '/'
+    successRedirect: '/users',
+    failureRedirect: '/users'
   }
 ));
 
