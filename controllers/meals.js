@@ -10,10 +10,10 @@ module.exports = {
     delete: deleteMeal
 }
 
-function index(res, req) {
-
-}
-
+function index(req, res) {
+    res.render('meals', {title: 'Meal Planner'});
+    }
+  
 function show(res, req) { 
 
 }

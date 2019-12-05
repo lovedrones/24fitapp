@@ -10,9 +10,10 @@ module.exports = {
     delete: deleteWorkout
 }
 
-function index(res, req) {
-
-}
+function index(req, res) {
+    res.render('workouts', {title: 'Workout Planner'});
+    }
+  
 
 function show(res, req) { 
 

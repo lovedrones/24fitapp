@@ -13,8 +13,10 @@ require('./config/database');
 require('./config/passport');
 
 var indexRouter = require('./routes/index');
+var FITmeRouter = require('./routes/24fitme');
 var mealsRouter = require('./routes/meals');
 var workoutsRouter = require('./routes/workouts');
+
 // var apiRouter = require('./routes/api');
 
 var app = express();
@@ -40,8 +42,9 @@ app.use(passport.session());
 
 // bring in your routes and it should work 
 app.use('/', indexRouter);
-app.use('24fitme/meals',  mealsRouter);
-app.use('24fitme/workouts', workoutsRouter);
+app.use('/meals',  mealsRouter);
+app.use('/workouts', workoutsRouter);
+app.use('/24fitme', FITmeRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

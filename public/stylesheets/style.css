@@ -2,10 +2,16 @@ body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   background: rgb(45,252,255);
-background: linear-gradient(0deg, rgba(45,252,255,1) 0%, rgba(255,225,160,1) 100%) no-repeat center center fixed;
+background: linear-gradient(0deg, rgba(45,252,255,1) 0%, #ffcc80  100%) no-repeat center center fixed;
 background-size: cover;
 }
 
 a {
   color: #00B7FF;
+}
+
+#indexpic {
+height: 50%;
+width: 100%;
+border: 4px solid #7c4dff; 
 }

@@ -16,7 +16,7 @@ mongoose.connection.on('disconnect', () => {
   console.log('we have disconnected from mongo cloud atlas')
 })
 
-mongoose.connection.on("erorr", () => {
+mongoose.connection.on("error", () => {
   console.error(error)
 })
 

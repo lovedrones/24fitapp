@@ -4,11 +4,8 @@ var userCtrl = require('../controllers/users')
 
 /* GET home page. */
 router.get('/', function(req, res, next) { 
-  res.render('index', { 
-    title: '2 FIT 4 ME', 
-    user: req.user});
+  res.render('index', { title: '2 FIT 4 ME', user: req.user});
 });
-
 
 router.get('/', userCtrl.index);
 
@@ -20,7 +17,7 @@ router.get('/auth/google', passport.authenticate(
 router.get('/oauth2callback',passport.authenticate(
   'google',
   { 
-    successRedirect: '24fitme/',
+    successRedirect: '/24fitme',
     failureRedirect: '/'
   }
 ));
