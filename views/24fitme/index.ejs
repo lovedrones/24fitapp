@@ -1,17 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-    <title>24 Fit-ME</title>
-</head>
-<body>
+<%- include('../partials/header') %>
+
+
+
+  <div class="card-panel teal lighten-1">
+       <h5><%= title %></h5>
+        <h5 class="cyan-text text-lighten-5">Please Log-In</h5>
+      <br>
     <form id="login">
-        <input value= "username" type="input"></input>
+        <input value= "username" type="input"></input><br>
+        <br>
         <input value="password" type="input"></input>
         <input type="submit" value="Log-In"></input>
     </form>
-</body>
-</html>
+</div>
+ 
+    </ul>
+  </div>
+  
+
+<%- include('../partials/footer') %>

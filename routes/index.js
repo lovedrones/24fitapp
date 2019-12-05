@@ -1,11 +1,16 @@
-var express = require('express');
-var router = express.Router();
-var passport= require('passport');
+var router = require('express').Router();
+var passport = require('passport');
+var userCtrl = require('../controllers/users')
 
 /* GET home page. */
 router.get('/', function(req, res, next) { 
-  res.render('index', { title: '24 FIT-me' });
+  res.render('index', { 
+    title: '2 FIT 4 ME', 
+    user: req.user});
 });
+
+
+router.get('/', userCtrl.index);
 
 router.get('/auth/google', passport.authenticate(
   'google', 
@@ -15,14 +20,14 @@ router.get('/auth/google', passport.authenticate(
 router.get('/oauth2callback',passport.authenticate(
   'google',
   { 
-    successRedirect: '/24fitme',
+    successRedirect: '24fitme/',
     failureRedirect: '/'
   }
 ));
 
 router.get('/logout', function(req, res){
   req.logout();
-  res.redirect('/users');
+  res.redirect('/');
 });
 
 

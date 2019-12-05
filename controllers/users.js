@@ -1,8 +1,7 @@
-const User = require('../models/users');
+const User = require('../models/user');
 
 module.exports = {
   index,
- 
 };
 
 function index(req, res, next) {
@@ -12,7 +11,7 @@ function index(req, res, next) {
   .sort(sortKey).exec(function(err, users) {
     if (err) return next(err);
     // Passing search values, name & sortKey, for use in the EJS
-    res.render('users/index', {
+    res.render('/', {
       users,
       user: req.user,
       name: req.query.name,

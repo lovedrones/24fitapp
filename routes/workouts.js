@@ -1,5 +1,7 @@
 var express = require('express');
 var router = express.Router();
+var workoutsCtrl = require('../controllers/workouts');
+
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
