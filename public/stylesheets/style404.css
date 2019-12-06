@@ -1,0 +1,41 @@
+body{
+ font-family: 'VT323', monospace;
+ background-color: #d314c9; /* For browsers that do not support gradients */
+ background-image: repeating-radial-gradient(#d314c9, yellow 10%, #8ed507 15%);
+}
+
+header {
+    background-color: rgb(142, 213, 7);
+    color:  rgba(255, 255, 255);
+    font-size: 8em;
+    width: 500px;
+}
+
+h2 {
+    color: black;
+    background-color: rgb(255, 255, 0);
+    font-size: 5em;
+    width: 500px;
+}
+
+h3 { 
+    background-color: black;
+    color: rgb(142, 213, 7);
+    font-size: 4em;
+    width: 500px;
+}
+#barrel {
+    height: 40%;
+    width: 40%;
+    float: right;
+    margin-top: -35%;
+    margin-left: -20%;
+}
+
+#therm { 
+   margin-bottom: -30%;
+   margin-left: 42%;
+   height: 25%;
+width: 25%;
+padding-right:10%;
+}
