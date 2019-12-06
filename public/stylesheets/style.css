@@ -14,3 +14,10 @@ a {
 height: 50%;
 width: 100%;
 }
+.roboto {
+  font-family: 'Roboto', sans-serif;
+}
+
+.monoto {
+  font-family: 'Monoton' ;
+}

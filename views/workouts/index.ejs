@@ -17,18 +17,21 @@
 <h5><%= title %></h5>
  
 <div class="row">
-        <div class="col s3">Workout</div>
-        <div class="col s3">Reps</div>
-        <div class="col s3">Sets</div>
-        <div class="col s3">Timer Duration</div><br>
-
-        <% if(workouts){%>
+   <div class="col s3 teal"><th><h5 class="blue-grey-text text-lighten-5">Workout </th></div>
+      <div class="col s3 teal"><th><h5 class="blue-grey-text text-lighten-5">Reps</th></div>
+         <div class="col s3 teal"><th><h5 class="blue-grey-text text-lighten-5">Sets</th></div>
+            <div class="col s3 teal"><th><h5 class="blue-grey-text text-lighten-5">Timer Duration</th></div><br>
+  <% if(workouts){%>
         <% workouts.forEach(function(w) { %>
-        <div class="col s3"><%=w.workout%></div>
-        <div class="col s3"><%=w.reps%></div>
-        <div class="col s3"><%=w.sets%></div>
-        <div class="col s3"><%=w.duration%></div>
-      </div> <% })}; %>
+         
+         <div class="col s3 amber lighten-4"> <td> <%=w.workout%> </td> </div>
+            <div class="col s3 amber lighten-5"> <td> <%=w.reps%> </td> </div>
+               <div class="col s3 amber lighten-4"> <td> <%=w.sets%> </td> </div>
+                  <div class="col s3 amber lighten-5"> <td> <%=w.duration%> </td> </div>
+        <form action="/workouts/<%= w._id %>?_method=DELETE" method="POST">
+         <button type="submit">DELETE WORKOUT</button>
+       </form>
+      <% })}; %></div> 
 
   <form method="POST" action="/workouts/workOutSubmit">
     
@@ -44,11 +47,12 @@
                     <option value="Knee-Highs">Knee Highs</option>
                   </select></div><br>
                   <div class="input-field">
+                     <input type="number" name="reps" placeholder="How Many Reps?">
+                  </div> 
+                  <div class="input-field">
                <input type="number" placeholder="How Many Sets?" name="sets">
             </div>
-            <div class="input-field">
-               <input type="number" name="reps" placeholder="How Many Reps?">
-            </div> 
+          
             <div class="input-field">
                <input type="text" name="duration" placeholder="How Long?(Minutes)">
             </div> 

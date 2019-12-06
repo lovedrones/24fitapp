@@ -47,5 +47,10 @@ Meal.findById(req.params.id, function(err, meal){
 })
 }
 function deleteMeal(req, res) {
-    
-}
+    Meal.findByIdAndDelete(req.params.id, function(err, meal) {
+        console.log(meal);
+        meal.save(function(err) {
+         res.redirect(`/meals`);   
+        })
+})     
+    }

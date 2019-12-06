@@ -9,7 +9,7 @@ router.get('/', isLoggedIn, mealsCtrl.new);
 router.post('/mealSubmit', isLoggedIn, mealsCtrl.createMeal);
 router.get('/', isLoggedIn, mealsCtrl.show);
 router.put('/', isLoggedIn, mealsCtrl.update);
-router.delete('/', isLoggedIn, mealsCtrl.delete);
+router.delete('/:id', isLoggedIn, mealsCtrl.delete);
 
 
 function isLoggedIn(req, res, next){

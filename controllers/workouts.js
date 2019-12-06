@@ -48,5 +48,10 @@ Workout.findById(req.params.id, function(err, workout){
 })
 }
 function deleteWorkout(req, res) {
-    
-}
+    Workout.findByIdAndDelete(req.params.id, function(err, workout) {
+        console.log(workout);
+        workout.save(function(err) {
+         res.redirect(`/workouts`);   
+        })
+})     
+    }

@@ -8,7 +8,7 @@ var workoutSchema = new Schema({
 },
     sets: Number,
     reps: Number,
-    duration: Number
+    duration: String
 })
 
 module.exports = mongoose.model('Workout', workoutSchema)

@@ -3518,6 +3518,7 @@ table span.badge {
 .row .col.s4 {
   width: 33.3333333333%;
   margin-left: auto;
+  margin-right: 16%;
   left: auto;
   right: auto;
 }
@@ -6107,19 +6108,19 @@ label {
    ========================================================================== */
 /* Style Placeholders */
 ::-webkit-input-placeholder {
-  color: #d1d1d1;
+  color: #7e57c2;
 }
 ::-moz-placeholder {
-  color: #d1d1d1;
+  color: #7e57c2;
 }
 :-ms-input-placeholder {
-  color: #d1d1d1;
+  color: #7e57c2;
 }
 ::-ms-input-placeholder {
-  color: #d1d1d1;
+  color: #7e57c2;
 }
 ::placeholder {
-  color: #d1d1d1;
+  color: #7e57c2;
 }
 
 /* Text inputs */

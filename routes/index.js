@@ -4,7 +4,7 @@ var userCtrl = require('../controllers/users')
 
 /* GET home page. */
 router.get('/', function(req, res, next) { 
-  res.render('index', { title: '2  FIT 4 ME', user: req.user});
+  res.render('index', { title: '24FIT-me', user: req.user});
 });
 
 router.get('/', userCtrl.index);

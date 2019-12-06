@@ -15,20 +15,23 @@
 <h5><%= title %></h5>
  
 <div class="row">
-        <div class="col s3 teal"><h5 class="blue-grey-text text-lighten-5">Day</h5></div>
-        <div class="col s3 teal"><h5 class="blue-grey-text text-lighten-5">Meal-Type</h5></div>
-        <div class="col s3 teal"><h5 class="blue-grey-text text-lighten-5">Meal</h5></div>
-        <div class="col s3 teal"><h5 class="blue-grey-text text-lighten-5">Calories</h5></div><br>
+        <div class="col s3 teal"><th><h5 class="blue-grey-text text-lighten-5">Day</h5></th></div>
+        <div class="col s3 teal"><th><h5 class="blue-grey-text text-lighten-5">Meal-Type</h5></th></div>
+        <div class="col s3 teal"><th><h5 class="blue-grey-text text-lighten-5">Meal</h5></th></div>
+        <div class="col s3 teal"><th><h5 class="blue-grey-text text-lighten-5">Calories</h5></th></div><br>
         <% if(meals){%>
         <% meals.forEach(function(m) { %>
         <div class="col s3 amber lighten-4"> <td> <%=m.day%> </td>  </div>
         <div class="col s3 amber lighten-5"> <td> <%=m.mealType%> </td> </div>
         <div class="col s3 amber lighten-4"> <td> <%=m.meal%>  </td> </div>
         <div class="col s3 amber lighten-5"> <td> <%=m.calories%> </td> </div>
-      <% })}; %> </div> 
+        <form action="/meals/<%= m._id %>?_method=DELETE" method="POST">
+          <button type="submit">DELETE MEAL</button>
+        </form>
+       <% })}; %>  </div>
 
   <form method="POST" action="/meals/mealSubmit">
-      <label>Day of Week: </label>
+      <label class="deep-purple-text lighten-2">Day of Week: </label>
       <div class="input-field">
             <select name="day" class="browser-default">
                     <option value="Sunday">Sunday</option>
@@ -40,7 +43,7 @@
                     <option value="Satday">Satuday</option>
                   </select></div><br>
 
-<label>Meal Type:</label>
+<label class="deep-purple-text lighten-2">Meal Type:</label>
                   <div class="input-field">
                   <select name="mealType" class="browser-default"> 
                       <option value="breakfast">Breakfast</option>
@@ -48,9 +51,9 @@
                       <option value="dinner">Dinner</option>
                                         </select>
                            </div>
-
+                           <input type="text" name="meal" placeholder="Enter Meal">
                             <input type="number" name="calories" placeholder="Enter Calories">
-                            <input type="text" name="meal" placeholder="Enter Meal">
+                       
                             <input type="submit">
       
   </form>
