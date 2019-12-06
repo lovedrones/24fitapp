@@ -1,7 +1,61 @@
 <%- include('../partials/header') %>
 
 
+<script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('select');
+            var instances = M.FormSelect.init(elems, options);
+          });
+        
+          // Or with jQuery
+        
+          $(document).ready(function(){
+            $('select').formSelect();
+          });
+         </script>
+
 <h5><%= title %></h5>
+ 
+<div class="row">
+        <div class="col s3">Workout</div>
+        <div class="col s3">Reps</div>
+        <div class="col s3">Sets</div>
+        <div class="col s3">Timer Duration</div><br>
+
+        <% if(workouts){%>
+        <% workouts.forEach(function(w) { %>
+        <div class="col s3"><%=w.workout%></div>
+        <div class="col s3"><%=w.reps%></div>
+        <div class="col s3"><%=w.sets%></div>
+        <div class="col s3"><%=w.duration%></div>
+      </div> <% })}; %>
+
+  <form method="POST" action="/workouts/workOutSubmit">
+    
+      <div class="input-field">
+            <select name="workout" class="browser-default">
+                    <option value="Push-Ups">Push Ups</option>
+                    <option value="Sit-Ups">Sit Ups</option>
+                    <option value="Jumping Jacks">Jacking Jacks</option>
+                    <option value="Leg-Ups">Leg ups</option>
+                    <option value="Curls">Curls</option>
+                    <option value="Jog">Jog</option>
+                    <option value="Jump Rope">Jump Rope</option>
+                    <option value="Knee-Highs">Knee Highs</option>
+                  </select></div><br>
+                  <div class="input-field">
+               <input type="number" placeholder="How Many Sets?" name="sets">
+            </div>
+            <div class="input-field">
+               <input type="number" name="reps" placeholder="How Many Reps?">
+            </div> 
+            <div class="input-field">
+               <input type="text" name="duration" placeholder="How Long?(Minutes)">
+            </div> 
+            <div class="input-field">
+               <input type="submit">
+            </div>
+  </form>
  
   
 <%- include('../partials/footer') %>

@@ -1,34 +1,52 @@
-var Meal = require('../models/meal');
 var Workout = require('../models/workout');
 
 module.exports = {
     index, 
     show,
     new: newWorkout,
-    create, 
+    createWorkout, 
     update, 
     delete: deleteWorkout
 }
 
+
 function index(req, res) {
-    res.render('workouts', {title: 'Workout Planner'});
+    Workout.find({}, function(err, workouts) {
+        res.render('workouts', {title: 'Workout Planner', workouts });
+    })
     }
   
+function show(req, res) { 
+console.log(req.params.id);
+Workout.findById(req.params.id, function(err, workout) {
+    console.log(workout)
+    res.render('workouts/show', {title: `Workout # ${workouts_id}`, workout}
+)})
+}
 
-function show(res, req) { 
+
+function newWorkout(req, res) {
 
 }
 
-function newWorkout(res, req) {
+function createWorkout(req, res) {
+    console.log(req.body)
+    var workout = new Workout(req.body);
+    workout.save(function(err, workout){
+        if(err) return res.redirect('/');
+        console.log(workout);
+        res.redirect('/workouts');
+    }) 
 
 }
-
-function create(res, req) {
-
+function update(req, res) {
+Workout.findById(req.params.id, function(err, workout){
+    workout.push(req.body);
+    workout.save(function(err){
+        res.render('/')
+    })
+})
 }
-function update(res, req) {
-
-}
-function deleteWorkout(res, req) {
+function deleteWorkout(req, res) {
     
 }

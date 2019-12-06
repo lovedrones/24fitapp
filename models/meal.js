@@ -1,28 +1,13 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-var breakfastSchema = new Schema({
-    meal: String,
-    calories: Number,
-    time: Number
-}) 
-
-var lunchSchema = new Schema({
-    meal: String,
-    calories: Number,
-    time: Number
-})
-
-var dinnerSchema = new Schema({
-    meal: String,
-    calories: Number,
-    time: Number
-})
 
 var mealSchema = new Schema({
-    breakfast: [breakfastSchema],
-    lunch: [lunchSchema],
-     dinner:[dinnerSchema],
+    mealType: { type: String,
+     enum: ['breakfast', 'lunch', 'dinner']},
+    meal: String,
+    calories: Number,
+    time: String,
     date: { type: Date, default: Date.now }
 })
 

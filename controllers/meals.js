@@ -1,33 +1,51 @@
 var Meal = require('../models/meal');
-var Workout = require('../models/workout');
+
 
 module.exports = {
     index, 
     show,
     new: newMeal,
-    create, 
+    createMeal, 
     update, 
     delete: deleteMeal
 }
 
 function index(req, res) {
-    res.render('meals', {title: 'Meal Planner'});
+    Meal.find({}, function(err, meals) {
+        res.render('meals', {title: 'Meal Planner', meals });
+    })
     }
   
-function show(res, req) { 
+function show(req, res) { 
+console.log(req.params.id);
+Meal.findById(req.params.id, function(err, meal) {
+    console.log(meal)
+    res.render('meals/show', {title: `Meal # ${meal_id}`, meal}
+)})
+}
+
+
+function newMeal(req, res) {
 
 }
 
-function newMeal(res, req) {
+function createMeal(req, res) {
+    var meal = new Meal(req.body);
+    meal.save(function(err, meals){
+        if(err) return res.redirect('/');
+        console.log(meal);
+        res.redirect('/meals');
+    }) 
 
 }
-
-function create(res, req) {
-
+function update(req, res) {
+Meal.findById(req.params.id, function(err, meal){
+    meal.push(req.body);
+    meal.save(function(err){
+        res.render('/')
+    })
+})
 }
-function update(res, req) {
-
-}
-function deleteMeal(res, req) {
+function deleteMeal(req, res) {
     
 }

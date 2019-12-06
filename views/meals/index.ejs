@@ -1,6 +1,60 @@
 <%- include('../partials/header') %>
+<script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('select');
+            var instances = M.FormSelect.init(elems, options);
+          });
+        
+          // Or with jQuery
+        
+          $(document).ready(function(){
+            $('select').formSelect();
+          });
+         </script>
 
 <h5><%= title %></h5>
  
-  
+<div class="row">
+        <div class="col s3">Day</div>
+        <div class="col s3">Breakfast</div>
+        <div class="col s3">Lunch</div>
+        <div class="col s3">Dinner</div><br>
+        <% if(meals){%>
+        <% meals.forEach(function(m) { %>
+        <div class="col s3"><%=m.date%></div>
+        <div class="col s3"><%=m.mealType%></div>
+        <div class="col s3"><%=m.meal%></div>
+        <div class="col s3"><%=m.calories%></div>
+      </div> <% })}; %>
+
+  <form method="POST" action="/meals/mealSubmit">
+      <label>Day of Week: </label>
+      <div class="input-field">
+            <select name="dayOfWeek" class="browser-default">
+                    <option value="Sun">Sunday</option>
+                    <option value="Mon">Monday</option>
+                    <option value="Tue">Tueday</option>
+                    <option value="Wed">Wednesday</option>
+                    <option value="Thurs">Thursday</option>
+                    <option value="Fri">Friday</option>
+                    <option value="Sat">Satuday</option>
+                  </select></div><br>
+
+
+                  <div class="input-field">
+                  <select name="meal-type" class="browser-default"> 
+                      <option value="breakfast">Breakfast</option>
+                      <option value="lunch">Lunch</option>
+                      <option value="dinner">Dinner</option>
+                                        </select>
+                           </div>
+
+                            <input type="number" name="calories" placeholder="Enter Calories">
+                            <input type="text" name="meal" placeholder="Enter Meal">
+                            <input type="submit">
+      
+  </form>
+
+
+            
 <%- include('../partials/footer') %>
