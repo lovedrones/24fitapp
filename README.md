@@ -19,5 +19,5 @@ NodeJs, Express, HTML,JavaScript, CSS, Materialize
 # User Stories
 ![alt text](https://i.imgur.com/0jCSDVf.png)
 
-#Heroku
-!![alt text](https://fit-me24.herokuapp.com/)
+# Heroku
+https://fit-me24.herokuapp.com/
