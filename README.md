@@ -1,4 +1,4 @@
-# 24fitapp
+# 24FIT-me
 A Lifestyle Fitness APP
 that should work as a personal trainer and nutritionist in your in you. 
 
