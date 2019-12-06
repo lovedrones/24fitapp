@@ -8,6 +8,9 @@ that should work as a personal trainer and nutritionist in your in you.
 ![alt text](https://i.imgur.com/bxAVIBn.png) 
 ![alt text](https://i.imgur.com/uy3wVgV.png)
 
+#Technologies Used
+
+NodeJs, Express, HTML,JavaScript, CSS, Materialize 
 
 #WireFrames 
 ![alt text](https://i.imgur.com/fOwuhoB.png)
