@@ -3509,8 +3509,8 @@ table span.badge {
 }
 
 .row .col.s3 {
-  width: 25%;
-  margin-left: auto;
+  width: 24%;
+  margin-left: 5px;
   left: auto;
   right: auto;
 }
@@ -4752,7 +4752,7 @@ small {
   transition: -webkit-box-shadow .25s;
   transition: box-shadow .25s;
   transition: box-shadow .25s, -webkit-box-shadow .25s;
-  border-radius: 2px;
+  border-radius: 6px;
 }
 
 .card .card-title {
@@ -4819,7 +4819,7 @@ small {
 }
 
 .card.horizontal .card-image {
-  max-width: 50%;
+  max-width: 100%;
 }
 
 .card.horizontal .card-image img {

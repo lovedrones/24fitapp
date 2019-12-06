@@ -15,34 +15,34 @@
 <h5><%= title %></h5>
  
 <div class="row">
-        <div class="col s3">Day</div>
-        <div class="col s3">Breakfast</div>
-        <div class="col s3">Lunch</div>
-        <div class="col s3">Dinner</div><br>
+        <div class="col s3 teal"><h5 class="blue-grey-text text-lighten-5">Day</h5></div>
+        <div class="col s3 teal"><h5 class="blue-grey-text text-lighten-5">Meal-Type</h5></div>
+        <div class="col s3 teal"><h5 class="blue-grey-text text-lighten-5">Meal</h5></div>
+        <div class="col s3 teal"><h5 class="blue-grey-text text-lighten-5">Calories</h5></div><br>
         <% if(meals){%>
         <% meals.forEach(function(m) { %>
-        <div class="col s3"><%=m.date%></div>
-        <div class="col s3"><%=m.mealType%></div>
-        <div class="col s3"><%=m.meal%></div>
-        <div class="col s3"><%=m.calories%></div>
-      </div> <% })}; %>
+        <div class="col s3 amber lighten-4"> <td> <%=m.day%> </td>  </div>
+        <div class="col s3 amber lighten-5"> <td> <%=m.mealType%> </td> </div>
+        <div class="col s3 amber lighten-4"> <td> <%=m.meal%>  </td> </div>
+        <div class="col s3 amber lighten-5"> <td> <%=m.calories%> </td> </div>
+      <% })}; %> </div> 
 
   <form method="POST" action="/meals/mealSubmit">
       <label>Day of Week: </label>
       <div class="input-field">
-            <select name="dayOfWeek" class="browser-default">
-                    <option value="Sun">Sunday</option>
-                    <option value="Mon">Monday</option>
-                    <option value="Tue">Tueday</option>
-                    <option value="Wed">Wednesday</option>
-                    <option value="Thurs">Thursday</option>
-                    <option value="Fri">Friday</option>
-                    <option value="Sat">Satuday</option>
+            <select name="day" class="browser-default">
+                    <option value="Sunday">Sunday</option>
+                    <option value="Monday">Monday</option>
+                    <option value="Tueday">Tueday</option>
+                    <option value="Wednesday">Wednesday</option>
+                    <option value="Thursday">Thursday</option>
+                    <option value="Friday">Friday</option>
+                    <option value="Satday">Satuday</option>
                   </select></div><br>
 
-
+<label>Meal Type:</label>
                   <div class="input-field">
-                  <select name="meal-type" class="browser-default"> 
+                  <select name="mealType" class="browser-default"> 
                       <option value="breakfast">Breakfast</option>
                       <option value="lunch">Lunch</option>
                       <option value="dinner">Dinner</option>
