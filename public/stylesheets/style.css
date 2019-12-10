@@ -1,5 +1,4 @@
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   background: rgb(45,252,255);
 background: linear-gradient(0deg, rgba(45,252,255,1) 0%, #ffcc80  100%) no-repeat center center fixed;
@@ -20,4 +19,9 @@ width: 100%;
 
 .monoto {
   font-family: 'Monoton' ;
+}
+.delete {
+  background-color: rgb(254, 89, 89);
+  padding: 8px;
+  border: solid 2px white;
 }

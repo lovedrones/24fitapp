@@ -13,23 +13,27 @@
          </script>
 
 <h5><%= title %></h5>
- 
+<table>
+    <thead>
+     <tr>
 <div class="row">
-        <div class="col s3 teal"><th><h5 class="blue-grey-text text-lighten-5">Day</h5></th></div>
-        <div class="col s3 teal"><th><h5 class="blue-grey-text text-lighten-5">Meal-Type</h5></th></div>
-        <div class="col s3 teal"><th><h5 class="blue-grey-text text-lighten-5">Meal</h5></th></div>
-        <div class="col s3 teal"><th><h5 class="blue-grey-text text-lighten-5">Calories</h5></th></div><br>
-        <% if(meals){%>
+    <th class="s4 l4 teal"><h5 class="blue-grey-text text-lighten-5">Day</h5></th>
+    <th class="s4 l4 teal"><h5 class="blue-grey-text text-lighten-5">Meal-Type</h5></th>
+    <th class="s4 l4 teal"><h5 class="blue-grey-text text-lighten-5">Meal</h5></th>
+    <th class="s4 l4 teal"><h5 class="blue-grey-text text-lighten-5">Calories</h5></th><br>
+  </thead>   
+    <% if(meals){%>
         <% meals.forEach(function(m) { %>
-        <div class="col s3 amber lighten-4"> <td> <%=m.day%> </td>  </div>
-        <div class="col s3 amber lighten-5"> <td> <%=m.mealType%> </td> </div>
-        <div class="col s3 amber lighten-4"> <td> <%=m.meal%>  </td> </div>
-        <div class="col s3 amber lighten-5"> <td> <%=m.calories%> </td> </div>
+          <td class="s4 l4 amber lighten-4"> <%=m.day%> </td>  
+          <td class="s4 l4 amber lighten-5">  <%=m.mealType%> </td> 
+          <td class="s4 l4 amber lighten-4">  <%=m.meal%>  </td> 
+          <td class="s4 l4 amber lighten-5"> <%=m.calories%> </td> 
         <form action="/meals/<%= m._id %>?_method=DELETE" method="POST">
-          <button type="submit">DELETE MEAL</button>
+         <td><button class="delete" type="submit">X</button></td> 
+        </tr> </tbody>
         </form>
-       <% })}; %>  </div>
-
+       <% })}; %> 
+</table>
   <form method="POST" action="/meals/mealSubmit">
       <label class="deep-purple-text lighten-2">Day of Week: </label>
       <div class="input-field">

@@ -15,24 +15,31 @@
          </script>
 
 <h5><%= title %></h5>
- 
-<div class="row">
-   <div class="col s3 teal"><th><h5 class="blue-grey-text text-lighten-5">Workout </th></div>
-      <div class="col s3 teal"><th><h5 class="blue-grey-text text-lighten-5">Reps</th></div>
-         <div class="col s3 teal"><th><h5 class="blue-grey-text text-lighten-5">Sets</th></div>
-            <div class="col s3 teal"><th><h5 class="blue-grey-text text-lighten-5">Timer Duration</th></div><br>
-  <% if(workouts){%>
+<table>
+<thead>
+ <tr>
+
+   <th class="s4 l4 teal"><h5 class="blue-grey-text text-lighten-5">Workout </th>
+      <th class="s4 l4 teal"><h5 class="blue-grey-text text-lighten-5">Reps</th>
+         <th class="s4 l4 teal"><h5 class="blue-grey-text text-lighten-5">Sets</th>
+            <th class="s4 l4 teal"><h5 class="blue-grey-text text-lighten-5">Timer Duration</th></tr><br>
+            </thead>
+           
+               <% if(workouts){%>
         <% workouts.forEach(function(w) { %>
          
-         <div class="col s3 amber lighten-4"> <td> <%=w.workout%> </td> </div>
-            <div class="col s3 amber lighten-5"> <td> <%=w.reps%> </td> </div>
-               <div class="col s3 amber lighten-4"> <td> <%=w.sets%> </td> </div>
-                  <div class="col s3 amber lighten-5"> <td> <%=w.duration%> </td> </div>
+      <td class="s4 l4 amber lighten-4"> <%=w.workout%> </td> 
+             <td class="s4 l4 amber lighten-5"> <%=w.reps%> </td> 
+                <td class="s4 l4 amber lighten-4"> <%=w.sets%> </td> 
+                   <td class="s4 l4 amber lighten-5"> <%=w.duration%> </td> 
         <form action="/workouts/<%= w._id %>?_method=DELETE" method="POST">
-         <button type="submit">DELETE WORKOUT</button>
+         <td><button class="delete "type="submit">X</button></td>
+      </tr> </tbody>
        </form>
-      <% })}; %></div> 
-
+      
+      <% })}; %>
+    
+   </table>
   <form method="POST" action="/workouts/workOutSubmit">
     
       <div class="input-field">

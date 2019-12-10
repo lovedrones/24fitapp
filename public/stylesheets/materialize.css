@@ -4310,6 +4310,10 @@ nav i.material-icons {
 nav .nav-wrapper {
   position: relative;
   height: 100%;
+  background-image:   linear-gradient(
+    to right, 
+    #673ab7, #311b92
+  );
 }
 
 @media only screen and (min-width: 993px) {
@@ -4332,10 +4336,11 @@ nav .sidenav-trigger i {
 }
 
 nav .brand-logo {
+  font-family: 'Roboto';
   position: absolute;
   color: #fff;
   display: inline-block;
-  font-size: 2.1rem;
+  font-size: 2rem;
   padding: 0;
 }
 
