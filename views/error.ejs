@@ -7,14 +7,22 @@
     <link href="https://fonts.googleapis.com/css?family=VT323&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/stylesheets/style404.css">
     <title>404: Acid Pin</title>
-    <img id="therm" src="/images/thermalcomp.jpg">
-</head>
+    </head>
 <body>
+        <div class="row"> 
+                <div class="column"> 
+                    <div class="side">
     <header><%= message %></header>
     <h2><%= error.status %></h2>
+    </div>
+<div class="main">
+     <img id="therm" src="/images/thermalcomp.jpg">
+        <img id="barrel" src="/images/acidbarrel.svg"></img>
+    </div>
     <p><%= error.stack %></p>
 
-    <img id="barrel" src="/images/acidbarrel.svg"></img>
+   </div>
+   </div>
 
     
 </body>

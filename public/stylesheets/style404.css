@@ -3,6 +3,27 @@ body{
  background-color: #d314c9; /* For browsers that do not support gradients */
  background-image: repeating-radial-gradient(#d314c9, yellow 10%, #8ed507 15%);
 }
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 4px;
+  }
+  
+  /* Create four equal columns that sits next to each other */
+
+  
+  img {
+    margin-top: 8px;
+    vertical-align: middle;
+    float: right;
+  }
+  .side{
+      flex: 30%;
+  }
+  .main{
+      flex: 70%
+  }
+  
 
 header {
     background-color: rgb(142, 213, 7);
@@ -24,18 +45,18 @@ p {
     font-size: 1em;
     width: 500px;
 }
+
 #barrel {
     height: 40%;
     width: 40%;
-    float: right;
-    margin-top: -35%;
-    margin-left: -20%;
+    margin-top: 0%;
+    margin-left: 0%;
 }
 
 #therm { 
-   margin-bottom: -30%;
-   margin-left: 42%;
+   margin-bottom: 0%;
+   margin-left: 0%;
    height: 25%;
 width: 25%;
-padding-right:10%;
+padding-right:0%;
 }
