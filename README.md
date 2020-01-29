@@ -1,4 +1,4 @@
-# 24FIT-me
+# 24FIT-me / 2FIT 4ME
 A Lifestyle Fitness APP
 that should work as a personal trainer and nutritionist in your in you. 
 
