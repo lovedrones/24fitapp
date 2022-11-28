@@ -1,6 +1,6 @@
 # 24FIT-me / 2FIT 4ME
 A Lifestyle Fitness APP
-that should work as a personal trainer and nutritionist in your in you. 
+that should work as a personal trainer and nutritionist in your phone. 
 
 # ScreenShots
 ![alt text](https://i.imgur.com/U2Pw3DP.png)
